@@ -25,34 +25,38 @@ class Stack
   def initialize
     @head = nil
     @tail = nil
-    @values = []
+    @min = nil
+    @last_min
   end
 
   def push(data)
     new_node = Node.new(data)
-    @values << data
     if @tail.nil?
       @head = new_node
       @tail = new_node
+      @min = data
     else
       new_node.next = @head
       @head = new_node
     end
+    @last_min = @min
+    @min = data if data < @min
   end
 
   def pop
     return false if @head.nil?
 
     bye_data = @head.data
+    @min = @last_min if bye_data == @min
+    
     temp = @head.next
     @head = temp
     @tail = nil if @head.nil?
-    @values.pop
     bye_data
   end
 
   def min
-    @values.min
+    @min
   end
 end
 
