@@ -1,3 +1,4 @@
+require_relative "test/queue-test.rb"
 # Linked List class
 class LinkedList
   attr_accessor :head, :tail

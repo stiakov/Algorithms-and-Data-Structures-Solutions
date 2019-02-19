@@ -1,3 +1,5 @@
+require_relative "test/queue-test.rb"
+
 # LinkedList class
 class LinkedList
   attr_accessor :head, :tail
@@ -20,7 +22,7 @@ end
 
 # Queue class
 class Queue
-  attr_accessor :head, :tail
+  attr_accessor :queue, :size
 
   def initialize
     @queue = LinkedList.new
