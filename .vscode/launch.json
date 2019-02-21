@@ -9,7 +9,7 @@
       "name": "Debug Local File",
       "type": "Ruby",
       "request": "launch",
-      "program": "${workspaceRoot}/Ruby/transposition.rb"
+      "program": "${workspaceRoot}/Ruby/binary_tree_height.rb"
     },
   ]
 }
