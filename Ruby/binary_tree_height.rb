@@ -14,7 +14,6 @@ def tree_height(tree_as_list)
       end
     end
   end
-
   max
 end
 
@@ -46,4 +45,5 @@ puts tree_height([2, 7, 5, 2, 6, 0, 9]) # => 3
 puts tree_height([10, 20, 10, 30, 20, 40, 20, 60]) # => 3
 puts tree_height([1, 7, 5, 2, 6, 0, 9, 3, 7, 5, 11, 0, 0, 4, 0]) # => 4
 puts tree_height([5, 3, 2, 9, 0, 0, 7, 0, 0, 0, 0, 0, 0, 5, 0]) # => 4
+puts tree_height([3, 5, 9, 6, 8, 20, 10, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0]) # => 4
 puts 'end'

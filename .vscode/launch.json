@@ -9,7 +9,7 @@
       "name": "Debug Local File",
       "type": "Ruby",
       "request": "launch",
-      "program": "${workspaceRoot}/Ruby/binary_tree_height.rb"
+      "program": "${workspaceRoot}/Ruby/sqrt_recursive.rb"
     },
   ]
 }
