@@ -35,7 +35,7 @@ puts  exact_sum?(42, [3, 16, 11, 5, 11, 5])
 # => false
 
 puts exact_sum?(51, [8, 12, 15, 7, 11, 14])
-# => true
+# => false
 
 puts exact_sum?(50, [1, 3, 5, 37, 18, 5])
 # => true
