@@ -4,24 +4,27 @@ def exact_sum?(k, coins)
   full_sum = coins.reduce(0, :+)
   return true if k == full_sum
 
-  output = backtracking_sum(k, coins, 0, full_sum)
+  output = backtracking_sum(k, coins, 0, full_sum, 0)
 end
 
-def backtracking_sum(result, array, start, total)
+def backtracking_sum(result, array, start, total, counter)
   n = (array.length - 1)
 
+  return true if total == result
   return false if start == n + 1
 
   if total > result
+    return false if start == n + 1
+
     total -= array[start]
-    return true if total == result
-
-    backtracking_sum(result, array, start + 1, total)
+    start += 1
+    backtracking_sum(result, array, start, total, counter + 1)
   elsif total < result
-    total += array[start]
-    return true if total == result
+    return false if start == n + 1
 
-    backtracking_sum(result, array, start - 1, total)
+    total += array[start]
+    start -= 1
+    backtracking_sum(result, array, start, total, counter + 1)
   end
 end
 
