@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require '../queue.rb'
+require_relative '../queue'
 
 class TestingQueues < MiniTest::Test
   def test_init_returns_class

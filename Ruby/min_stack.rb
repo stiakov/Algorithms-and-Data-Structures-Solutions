@@ -1,4 +1,4 @@
-require_relative "test/queue-test.rb"
+require_relative "./test/queue-test.rb"
 # Linked List class
 class LinkedList
   attr_accessor :head, :tail
@@ -62,11 +62,12 @@ class Stack
 end
 
 s = Stack.new
-s.push(3)
-s.push(5)
+s.push('nested 3')
+s.push('nested 2')
+s.push('nested 1')
 puts s.min # 3
 s.pop
-s.push(7)
+s.push('head-node')
 puts s.min  # 3
 s.push(2)
 puts s.min  # 2
