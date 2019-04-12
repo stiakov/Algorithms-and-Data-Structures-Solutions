@@ -37,3 +37,25 @@ p depth_first_search(
   6 => [2]
 )
 # => [0, 1, 3, 4, 5, 2, 6]
+
+
+=begin
+============ MODEL SOLUTION =============
+  def depth_first_search(graph)
+    result = []
+    stack = [0]
+    visited = []
+    
+    while stack.size != 0
+      head = stack.pop
+      result << head
+      visited << head
+      
+      not_visited = graph[head].reject { |node| visited.include? node }
+      
+      visited += not_visited
+      stack += not_visited.reverse
+    end
+    result
+  end
+=end
