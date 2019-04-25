@@ -1,11 +1,10 @@
-
 def balanced_tree?(array_tree)
   out = true
   output_l = counter(array_tree, 'left')
   height_l = output_l[1]
   out = output_l[0]
   return out unless out
-  
+
   output_r = counter(array_tree, 'right')
   height_r = output_r[1]
   out = output_r[0]
@@ -14,7 +13,7 @@ def balanced_tree?(array_tree)
   out
 end
 
-def counter (array_tree, side)
+def counter(array_tree, side)
   balance = true
   p = side == 'left' ? 1 : 2
   l = 2 * p + 1
@@ -31,8 +30,7 @@ def counter (array_tree, side)
     l = 2 * p + 1
     r = 2 * p + 2
   end
-  height = counter_left < counter_right ? counter_right : counter_left
-  height = counter_left if counter_left == counter_right
+  height = [counter_left, counter_right].max
   [balance, height]
 end
 
@@ -42,49 +40,47 @@ puts balanced_tree?([1, 2, 0, 3, 4, 0, 0])
 puts balanced_tree?([1, 2, 3, 4, 5, 6, 7])
 # => true
 
-
-=begin 
- # MODEL SOLUTION
-
- class Node
-  attr_reader :data
-  attr_accessor :left, :right
-
-  def initialize(data)
-    @data = data
-  end
-end
-
-def array_to_tree(array, i)
-  return nil if i >= array.length || array[i] == 0
-
-  node = Node.new(array[i])
-  node.left = array_to_tree(array, 2*i+1)
-  node.right = array_to_tree(array, 2*i+2)
-
-  node
-end
-
-def recursive_tree_height(tree)
-  return 0 if tree.nil?
-  return 1 if tree.left.nil? && tree.right.nil?
-  
-  [recursive_tree_height(tree.left), recursive_tree_height(tree.right)].max + 1
-end
-
-def balanced_tree?(array_tree)
-  # write your code here
-  tree = array_to_tree(array_tree, 0)
-  
-  balanced_tree_recursive?(tree)
-end
-
-def balanced_tree_recursive?(tree)
-  return true if tree.nil? || (tree.left.nil? && tree.right.nil?)
-  
-  balanced_tree_recursive?(tree.left) && 
-  balanced_tree_recursive?(tree.right) && 
-  (recursive_tree_height(tree.left) - recursive_tree_height(tree.right)).abs <= 1
-end
-
-=end
+#
+#  # MODEL SOLUTION
+#
+#  class Node
+#   attr_reader :data
+#   attr_accessor :left, :right
+#
+#   def initialize(data)
+#     @data = data
+#   end
+# end
+#
+# def array_to_tree(array, i)
+#   return nil if i >= array.length || array[i] == 0
+#
+#   node = Node.new(array[i])
+#   node.left = array_to_tree(array, 2*i+1)
+#   node.right = array_to_tree(array, 2*i+2)
+#
+#   node
+# end
+#
+# def recursive_tree_height(tree)
+#   return 0 if tree.nil?
+#   return 1 if tree.left.nil? && tree.right.nil?
+#
+#   [recursive_tree_height(tree.left), recursive_tree_height(tree.right)].max + 1
+# end
+#
+# def balanced_tree?(array_tree)
+#   # write your code here
+#   tree = array_to_tree(array_tree, 0)
+#
+#   balanced_tree_recursive?(tree)
+# end
+#
+# def balanced_tree_recursive?(tree)
+#   return true if tree.nil? || (tree.left.nil? && tree.right.nil?)
+#
+#   balanced_tree_recursive?(tree.left) &&
+#   balanced_tree_recursive?(tree.right) &&
+#   (recursive_tree_height(tree.left) - recursive_tree_height(tree.right)).abs <= 1
+# end
+#
