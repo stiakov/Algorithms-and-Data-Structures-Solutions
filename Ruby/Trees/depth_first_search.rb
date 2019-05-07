@@ -1,3 +1,4 @@
+=begin
 def depth_first_search(graph)
   output = [0]
   queue = [0]
@@ -16,6 +17,22 @@ def depth_first_search(graph)
   missing = graph.keys - output
   output << missing[0]
 end
+=end
+
+def depth_first_search(graph)
+  visited = []
+  stack = [0]
+  result = []
+
+  until stack.empty?
+    node = stack.pop
+    visited << node
+    result << node
+    unvisited = graph[node].reject { |n| visited.include? n }
+    stack += unvisited
+  end
+  result
+end
 
 p depth_first_search(
   0 => [2],
@@ -25,7 +42,7 @@ p depth_first_search(
   4 => [1, 5],
   5 => [4, 2]
 )
-# => [0, 2, 5, 4, 1, 3]
+# => [0, 2, 5, 4, 1, 3].
 
 p depth_first_search(
   0 => [1, 2],
