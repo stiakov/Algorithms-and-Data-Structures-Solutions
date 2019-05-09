@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e38be4fa-57e5-4b8e-9f1d-bddb394fca02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ruby/Sets/number_of_primes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruby/Sets/number_of_primes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/Ruby/Sets/number_of_primes.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ruby/Sets/number_of_primes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="479">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -25,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.gem/gems/ruby-debug-ide-0.7.0.beta7/lib/ruby-debug-ide.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
+            <state relative-caret-position="150">
               <caret line="100" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
@@ -200,12 +200,12 @@
       <workItem from="1556921750747" duration="8412000" />
       <workItem from="1557259102963" duration="2618000" />
       <workItem from="1557330849916" duration="1333000" />
-      <workItem from="1557374064914" duration="871000" />
+      <workItem from="1557374064914" duration="1256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47003000" />
+    <option name="totallyTimeSpent" value="47388000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -220,20 +220,20 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48995984" visible="true" weight="0.22707736" />
-      <window_info id="Structure" order="1" sideWeight="0.51004016" side_tool="true" visible="true" weight="0.22707736" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49084857" visible="true" weight="0.22707736" />
+      <window_info id="Structure" order="1" sideWeight="0.5091514" side_tool="true" visible="true" weight="0.22707736" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49641833" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.493553" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493553" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.61962754" weight="0.2759036" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.61962754" visible="true" weight="0.2759036" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50358164" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.497851" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -296,7 +296,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/Ruby/Sets/number_of_primes.rb</url>
-          <line>41</line>
+          <line>38</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
@@ -313,6 +313,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>primes &amp; arr</expression-string>
+        <language-id>ruby</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>output.to_h</expression-string>
         <language-id>ruby</language-id>
@@ -355,11 +360,6 @@
       </expression>
       <expression>
         <expression-string>item%11</expression-string>
-        <language-id>ruby</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>container.class</expression-string>
         <language-id>ruby</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -491,15 +491,15 @@
     </entry>
     <entry file="file://$USER_HOME$/.gem/gems/ruby-debug-ide-0.7.0.beta7/lib/ruby-debug-ide.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
+        <state relative-caret-position="150">
           <caret line="100" selection-start-line="100" selection-end-line="100" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ruby/Sets/number_of_primes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="479">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
