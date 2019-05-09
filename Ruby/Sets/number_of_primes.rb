@@ -55,4 +55,21 @@ def number_of_primes(array)
   array.count { |element| primes.include?(element) }
 end
 
+
+=end
+
+=begin
+# ========== RUBY's Library for Primes =========
+
+# Ruby happens to have this built in, actually.
+# You can use the Prime module and an object called EratosthenesGenerator
+# to do the same thing. In code, if you wanted to see if the number 105557 is prime,
+# you'd do the following:
+
+require 'prime'
+
+num = 105557
+primes = Prime::EratosthenesGenerator.new.take_while {|i| i <= num}
+
+primes.include?(num)
 =end
