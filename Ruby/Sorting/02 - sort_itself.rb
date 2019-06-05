@@ -5,8 +5,19 @@ def sort_itself(array)
       array.delete_at(idx1)
       array.insert(idx2, item)
     end
+    puts array.join(' ') if idx1 > 0
   end
-  puts array.join(' ') if idx1 > 0
+end
+
+def running_time(array)
+  counter = 0
+  (1..array.size - 1).each do |num|
+    while array[num] < array[num - 1]
+      array[num], array[num - 1] = array[num - 1], array[num]
+      counter += 1
+    end
+  end
+  counter
 end
 
 sort_itself([9, 8, 6, 7, 3, 5, 4, 1, 2])

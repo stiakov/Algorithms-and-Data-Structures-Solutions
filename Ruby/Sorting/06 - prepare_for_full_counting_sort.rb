@@ -4,7 +4,6 @@ def full_counting_sort_prep(array)
     val = val.split(' ')[0].to_i
     counter[val] += 1
   end
-  sum = 0
   aux = []
   counter.each_with_index do |elem, idx|
     sum = counter[0..idx].reduce(:+)
