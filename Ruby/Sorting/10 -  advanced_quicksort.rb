@@ -1,51 +1,37 @@
 def advanced_quicksort(array)
-  partition(array)
+  partition(array, 0, array.size - 1)
 
 end
 
-def partition (arr, idxs = ['x'], origin = [])
-  return if arr.size < 2
-  pivot = arr.last
-  i, j = 0, 1
-  greater = []
 
-  while j < arr.size - 1
-    l = arr[i]
-    r = arr[j]
-    idxs << i if l < pivot
-    greater << j if r > pivot
-    swap(arr, i, j) if r < l
-    swap(arr, j, i) if r < l
+def partition(array, lower_bound, upper_bound)
+  return if upper_bound <= lower_bound
+  pivot = array[upper_bound]
+  i, j = lower_bound - 1, upper_bound
 
-
-    i = idxs.last + 1
-    j += 1
+  loop do
+    loop do
+      i += 1
+      break if pivot <= array[i]
+    end
+    loop do
+      j -= 1
+      break if j <= lower_bound || array[j] <= pivot
+    end
+    array[i], array[j] = array[j], array[i]
+    break if j <= i
   end
-  origin << arr
-  arr.insert(idxs.last + 1, arr.pop) unless idxs.empty?
-  partition(arr[0..idxs.last], idxs, origin)
-  p merge(origin, arr, 0)
-  partition(arr[(idxs.last)..-1], idxs, origin)
-  p merge(origin, arr, idxs.last + 2)
-end
+  array[j], array[i], array[upper_bound] = array[i], pivot, array[j]
+  puts array.join(' ')
 
-def merge(origin, arr, idx)
-  sz = arr.size
-
-  arr.size.times do |i|
-    origin[0][idx] = arr[i]
-    idx += 1
-  end
-  p = "merge"
-  origin
-end
-
-def swap (array, idx1, idx2)
-  array[idx1], array[idx2] = array[idx2], array[idx1]
+  partition(array, lower_bound, i - 1)
+  partition(array, i + 1, upper_bound)
 end
 
 
-advanced_quicksort([1, 3, 9, 8, 2, 7, 5])
-# => 1 3 2 5 9 7 8
-#    1 2 3 5 9 7 8
-#    1 2 3 5 7 8 9
+advanced_quicksort([9, 8, 6, 7, 3, 5, 4, 1, 2])
+# 1 2 6 7 3 5 4 9 8
+# 1 2 6 7 3 5 4 8 9
+# 1 2 3 4 6 5 7 8 9
+# 1 2 3 4 6 5 7 8 9
+# 1 2 3 4 5 6 7 8 9
