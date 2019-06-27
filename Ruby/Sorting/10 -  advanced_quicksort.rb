@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 def advanced_quicksort(array)
   partition(array, 0, array.size - 1)
-
 end
-
 
 def partition(array, lower_bound, upper_bound)
   return if upper_bound <= lower_bound
+
   pivot = array[upper_bound]
   i, j = lower_bound - 1, upper_bound
 
@@ -27,7 +28,6 @@ def partition(array, lower_bound, upper_bound)
   partition(array, lower_bound, i - 1)
   partition(array, i + 1, upper_bound)
 end
-
 
 advanced_quicksort([9, 8, 6, 7, 3, 5, 4, 1, 2])
 # 1 2 6 7 3 5 4 9 8
