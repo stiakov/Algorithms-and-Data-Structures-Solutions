@@ -6,7 +6,7 @@ def time_scheduler(array)
   while i < bloc.size - 1
     item1 = bloc[i]
     item2 = bloc[i + 1]
-    condition = item1[1] <= item2[0] || out.last[1] < item2[0]
+    condition = item1[1] <= item2[0] || out.last[1] <= item2[0]
 
     out << item2 if condition
     i += 1
