@@ -6,11 +6,10 @@ def smallest_difference(array)
 end
 
 def sort_io(array)
-  array.sort_by{ |x| x }
+  array.sort!
 end
 
 def find_the_smallest_diff(sorted_array)
-  ctr = true
   i = 0
   out = Array.new
   while i <= sorted_array.size - 2
