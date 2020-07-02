@@ -16,27 +16,24 @@
 * @return {number[]}
 */
 
+// BRUTE FORCE APPROACH
+// Time: O(n2), Space: O(1)
 
-// Brute Force Approach
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
 const twoSum = function (nums, target) {
   let couple = undefined;
-  for (idx = 0; idx < nums.length; idx ++) {
-      for (jdx = idx + 1; jdx < nums.length; jdx ++) {
-          if (nums[idx] + nums[jdx] == target) {
-              couple = [idx, jdx];
-              break;
-          }
-          if (couple) break;
+  for (idx = 0; idx < nums.length; idx++) {
+    for (jdx = idx + 1; jdx < nums.length; jdx++) {
+      if (nums[idx] + nums[jdx] == target) {
+        couple = [idx, jdx];
+        break;
       }
+      if (couple) break;
+    }
   }
   return couple;
 };
 
+// HASH TABLE APPROACH
 
 
 var twoSum = function (nums, target) {
@@ -61,7 +58,7 @@ var twoSum = function (nums, target) {
       couple = [collection[value][0], collection[pair][0]];
       pairFound = true;
 
-  }
+    }
 
     idx++;
   }
