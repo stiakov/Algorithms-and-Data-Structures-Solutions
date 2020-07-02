@@ -30,57 +30,33 @@ const twoSum = function (nums, target) {
       if (couple) break;
     }
   }
-  return couple;
+  return couple || [];
 };
 
 // HASH TABLE APPROACH
+// Time: O(n), Space: O(n)
 
-
-var twoSum = function (nums, target) {
-  const collection = indexCollector(nums);
-  console.log(collection)
-  let idx = 0
-  let couple = [];
-  let pairFound = false;
-
-  while (!pairFound && idx < nums.length) {
-    const value = nums[idx];
-    const pair = target - value;
-
-    if (pair == value && collection[value].length > 1) {
-
-      couple = [collection[value][0], collection[value][1]];
-      pairFound = true;
-
-    } else if (collection.hasOwnProperty(pair)) {
-
-      console.log(collection[value].length)
-      couple = [collection[value][0], collection[pair][0]];
-      pairFound = true;
-
+function twoSumm(numbers, target) {
+  const myHash = {};
+  let output = []
+  for (i = 0; i < numbers.length; i++) {
+    const control = target - numbers[i];
+    if (myHash.hasOwnProperty(numbers[i])) {
+      myHash[numbers[i]].push(i);
+    } else {
+      myHash[numbers[i]] = [i];
     }
-
-    idx++;
+    if (myHash.hasOwnProperty(control) && i != myHash[control][0]) {
+      output = [myHash[control][0], i];
+      return output
+    }
   }
-
-  return couple;
-};
-
-function indexCollector(nums) {
-  const collection = {};
-
-  nums.forEach((num, idx) => {
-    if (collection.hasOwnProperty(num)) {
-      collection[num].push(idx);
-    }
-    else {
-      collection[num] = [idx];
-    }
-  });
-  return collection;
+  return [];
 }
 
-
-// console.log(twoSum([8, 7, 6, 15, 8], 16));
-// console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([8, 7, 6, 15, 8], 16));
+console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([3, 2, 6], 6));
+console.log(twoSum([8, 7, 6, 15, 8], 16));
+console.log(twoSumm([2, 7, 11, 15], 9));
+console.log(twoSumm([3, 2, 6], 6));
